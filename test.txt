@@ -1,0 +1,10 @@
+docker images
+docker pull mongo
+docker container ls --all
+docker container create --name mongoserver1 mongo
+docker container create --name mongoserver2 mongo
+docker container start mongoserver1
+docker container rm mongoserver1
+docker container stop mongoserver1
+docker container create --name mongoserver1 -p 8181:27017 mongo
+docker images rm mongo
