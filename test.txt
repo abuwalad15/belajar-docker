@@ -8,3 +8,4 @@ docker container rm mongoserver1
 docker container stop mongoserver1
 docker container create --name mongoserver1 -p 8181:27017 mongo
 docker images rm mongo
+docker build --tag app-golang .
