@@ -10,3 +10,9 @@ docker container create --name mongoserver1 -p 8181:27017 mongo
 docker images rm mongo
 docker build --tag app-golang .
 docker container create --name app1 -p 8080:8080 app-golang
+docker tag app-golang abuwalad/app-golang
+docker push abuwalad/app-golang
+docker login
+username:
+Password:
+Login Sucessed
