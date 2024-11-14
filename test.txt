@@ -22,3 +22,4 @@ kubectl create -f nginx.yaml
 kubectl get pod
 kubectl get pod -o wide
 kubectl describe pod nginx
+kubectl port-forward nginx 8888:80 (portakses:portNginx)
