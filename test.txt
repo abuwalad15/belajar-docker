@@ -17,6 +17,8 @@ username:
 Password:
 Login Sucessed
 
+Membuat POD
+======================
 kubectl version
 docker pull nginx
 kubectl get node
@@ -27,6 +29,21 @@ kubectl get pod -o wide
 kubectl describe pod nginx
 kubectl port-forward nginx 8888:80 (portakses:portNginx)
 
+Label
+========================
 nginx-with-label.yaml
 kubectl create -f nginx-with-label.yaml
-kubectl get pods --show-labels
+kubectl get pod --show-labels
+kubectl label pod nginx environtment=development
+kubectl get pod -l team
+kubectl get pod -l '!key'
+kubectl get pod -l key1,key2=value
+
+Annotation
+========================
+kubectl create -f nginx-with-annotation.yaml 
+kubectl describe pod nginx-with-annotation
+kubectl annotate pod nginx-with-label description="ini adalah aplikasi label dengan annotation"
+
+Namespace
+========================
