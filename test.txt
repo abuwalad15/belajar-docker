@@ -18,6 +18,9 @@ Password:
 Login Sucessed
 
 kubectl version
+docker pull nginx
+kubectl get node
+kubectl describe node docker-desktop
 kubectl create -f nginx.yaml
 kubectl get pod
 kubectl get pod -o wide
