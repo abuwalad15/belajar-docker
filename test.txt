@@ -17,7 +17,7 @@ username:
 Password:
 Login Sucessed
 
-Membuat POD
+POD
 ======================
 kubectl version
 docker pull nginx
@@ -28,7 +28,9 @@ kubectl get pod
 kubectl get pod -o wide
 kubectl describe pod nginx
 kubectl port-forward nginx 8888:80 (portakses:portNginx)
-
+kubectl delete pod nginx
+kubectl delete pod -l environtment=development
+kubectl delete pod --all --namespace finance (semua pod yangb ada di finance akan dihapus)
 Label
 ========================
 nginx-with-label.yaml
@@ -51,7 +53,7 @@ kubectl get namespace
 kubectl get pod --namespace default
 kubectl create -f finance-namespace.yaml --namespace namespace
 kubectl create -f nginx.yaml --namespace finance
-
+kubectl delete namespace finance
 
 
 
