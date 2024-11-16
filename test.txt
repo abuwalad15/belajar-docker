@@ -47,3 +47,12 @@ kubectl annotate pod nginx-with-label description="ini adalah aplikasi label den
 
 Namespace
 ========================
+kubectl get namespace
+kubectl get pod --namespace default
+kubectl create -f finance-namespace.yaml --namespace namespace
+kubectl create -f nginx.yaml --namespace finance
+
+
+
+
+
