@@ -55,6 +55,15 @@ kubectl create -f finance-namespace.yaml --namespace namespace
 kubectl create -f nginx.yaml --namespace finance
 kubectl delete namespace finance
 
+replicationcontroller
+========================
+kubectl create -f nginx-rc.yaml
+replicationcontroller/nginx-rc created
+kubectl get replicationcontroller / rc
+kubectl get pod
+kubectl delete pod nginx-rc-7ddn9
 
-
+kubectl delete rc nginx-rc
+kubectl delete rc nginx-rc --cascade=false
+kubectl get pod --all
 
