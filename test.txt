@@ -82,3 +82,10 @@ Daemon set
 kubectl create -f nginx-ds.yaml
 kubectl get daemonsets
 kubectl delete daemonsets namadaemonsets
+
+Cronjob
+=========================
+kubectl create -f cronjob-nodejs.yaml
+kubectl get all
+kubectl describe cronjob nodejs-cronjob
+kubectl delete cronjob nodejs-cronjob
