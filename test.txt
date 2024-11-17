@@ -73,6 +73,12 @@ kubectl create -f nginx-rs.yaml
 kubectl get pod
 kubectl delete pod nginx-tgjpm
 
+kubectl create -f nginx-rs-me.yaml
+kubectl get pod
+kubectl get pod --show-labels
 
-
-
+Daemon set
+========================
+kubectl create -f nginx-ds.yaml
+kubectl get daemonsets
+kubectl delete daemonsets namadaemonsets
