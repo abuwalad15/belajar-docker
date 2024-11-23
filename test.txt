@@ -89,3 +89,10 @@ kubectl create -f cronjob-nodejs.yaml
 kubectl get all
 kubectl describe cronjob nodejs-cronjob
 kubectl delete cronjob nodejs-cronjob
+
+All
+=========================
+kubectl get all --all
+kubectl get all --namespace namanamespace
+kubectl delete all --all
+kubectl delete all --namespace namanamespace
