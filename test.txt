@@ -96,3 +96,11 @@ kubectl get all --all
 kubectl get all --namespace namanamespace
 kubectl delete all --all
 kubectl delete all --namespace namanamespace
+
+Service
+=========================
+kubectl create -f service-nginx.yaml
+kubectl exec -it curl -- /bin/sh
+curl http://10.100.98.32:8080
+exit
+kubectl delete all --all
