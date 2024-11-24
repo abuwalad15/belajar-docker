@@ -111,7 +111,7 @@ kubectl get all
 kubectl exec -it curl -- /bin/sh
 env
 env | grep NGINX_SERVICE
-naama-service.nama-namespace.svc.cluster.local
+nama-service.nama-namespace.svc.cluster.local
 curl http://nginx-service.default.svc.cluster.local:8080
 exit
 kubectl get endpoints
@@ -123,8 +123,11 @@ kubectl get all
 kubectl exec -it curl -- /bin/sh
 curl http://example-service.default.svc.cluster.local:80
 
-
-
+Service with nodeport
+=========================
+kubectl create -f service-nginx-nodeport.yaml
+kubectl get all
+kubectl service nginx-service
 
 
 
