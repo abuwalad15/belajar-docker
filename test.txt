@@ -97,10 +97,40 @@ kubectl get all --namespace namanamespace
 kubectl delete all --all
 kubectl delete all --namespace namanamespace
 
-Service
+Create Service
 =========================
 kubectl create -f service-nginx.yaml
 kubectl exec -it curl -- /bin/sh
 curl http://10.100.98.32:8080
 exit
 kubectl delete all --all
+
+Access Service
+=========================
+kubectl get all
+kubectl exec -it curl -- /bin/sh
+env
+env | grep NGINX_SERVICE
+naama-service.nama-namespace.svc.cluster.local
+curl http://nginx-service.default.svc.cluster.local:8080
+exit
+kubectl get endpoints
+
+Example Service
+=========================
+kubectl create -f service-example.yaml
+kubectl get all
+kubectl exec -it curl -- /bin/sh
+curl http://example-service.default.svc.cluster.local:80
+
+
+
+
+
+
+
+
+
+
+
+
