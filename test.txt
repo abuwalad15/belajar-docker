@@ -17,6 +17,12 @@ username:
 Password:
 Login Sucessed
 
+docker container create --name nginxserver1 nginx
+docker container start nginxserver1
+docker container create --name nginxserver1 -p 8080:80 nginx
+docker container stop nginxserver1
+docker container rm nginxserver1
+
 POD
 ======================
 kubectl version
@@ -129,7 +135,19 @@ kubectl create -f service-nginx-nodeport.yaml
 kubectl get all
 kubectl service nginx-service
 
+Service with Load Balancer
+=========================
+kubectl create -f service-nginx-loadbalancer.yaml
+kubectl get all
+kubectl service nginx-service
 
+Service with ingress
+=========================
+minikube addosn enable ingress
+kubectl get all --namespace kube-system
+kubectl create -f service-nginx-loadbalancer.yaml
+kubectl get all
+kubectl service nginx-service
 
 
 
