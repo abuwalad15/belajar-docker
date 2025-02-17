@@ -1,0 +1,43 @@
+docker run -d -p 80:80 --name web-freelancer nginx:latest
+docker ps
+
+mkdir freelancer
+cd freelancer
+---- copy file ----
+wget https://www.free-css.com/assets/files/free-css-templates/download/page295/antique-cafe.zip
+ls
+unzip antique-cafe.zip
+ls
+cd 2126_antique_cafe
+cp -R * ../.
+cd ..
+ls
+rm -Rf antique-cafe.zip 2126_antique_cafe
+ls
+docker cp . web-freelancer:/usr/share/nginx/html
+http://54.151.149.187/
+docker ps
+docker stop web-freelancer
+
+---mount folder---
+cd freelancer
+docker run -d -p 80:80 -v .:/usr/share/nginx/html --name web-freelancer-mn nginx:latest
+docker ps
+nano index.html
+
+---Volume---
+cd freelancer
+docker ps
+docker container stop web-freelancer-mn
+docker volume create vol-freelancer
+cp -Rv . /var/lib/docker/volumes/vol-freelancer/_data/
+docker run -d -p 80:80 -v vol-freelancer:/usr/share/nginx/html --name web-freelancer-vl nginx:latest
+cd /var/lib/docker/volumes/vol-freelancer/_data/
+nano index.html
+
+
+
+
+
+
+
